@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Index</h1>
+{% for per in person_list %}
+<h3><a href="{{ per.get_absolute_url }}">name: {{per}}</a></h3>
+<h3>age: {{per.age}}</h3>
+<h3>Number of kids: {{per.numberofKids}}</h3>
+<h3>Enrollment date: {{per.enrolldate}}</h3>
+{% endfor %}
+
+
+{% endblock content%}
