@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^welcomehome/', include('welcomehome.urls')),
     url(r'^posts/', include('posts.urls', namespace='posts')),
-    url(r'^newsletter', include('newsletter.urls'), name='newsletter'),
+    url(r'^newsletter/', include('newsletter.urls', namespace='newsletter')),
 
 ]
 

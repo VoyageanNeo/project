@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "geoposition",
     'welcomehome',
     'posts',
-    'pagedown'
+    'pagedown',
     'newsletter'
 
 ]
@@ -64,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates/welcomehome'),
+            os.path.join(BASE_DIR, 'templates/newsletter'),
             os.path.join(BASE_DIR, 'templates/posts'),
         ],
         'APP_DIRS': True,
@@ -149,3 +149,13 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+
+
+# Host for sending e-mail.
+EMAIL_HOST = 'smtp.gmail.com'
+
+# Optional SMTP authentication information for EMAIL_HOST.
+EMAIL_HOST_USER = 'nwcntyrcrm@gmail.com'
+EMAIL_HOST_PASSWORD = 'orehatennsai'
+EMAIL_PORT=587
+EMAIL_USE_TLS = True
