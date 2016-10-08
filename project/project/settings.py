@@ -15,7 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+# Google map API
+GEOPOSITION_GOOGLE_MAPS_API_KEY = "AIzaSyCrvpKrB73r_KNB0dQ-R9eR6cMSaJvZpkU"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -30,23 +31,22 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
+    'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
-    "geoposition",
-    'welcomehome',
-    'posts',
     'pagedown',
-    'newsletter',
     'crispy_forms',
-    'registration',
     'life',
+    'newsletter',
+    'posts',
+    'welcomehome',
+    # registration
+
 
 ]
 # orgder is important don't touch it just leave is as it was
@@ -68,6 +68,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates/life'),
+            os.path.join(BASE_DIR, 'templates/registration'),
             os.path.join(BASE_DIR, 'templates/newsletter'),
             os.path.join(BASE_DIR, 'templates/posts'),
         ],
@@ -98,8 +99,8 @@ DATABASES = {
         'PORT': '',
     },
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'bdb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cdb',
         'USER': 'myprojectuser',
         'PASSWORD': 'five',
         'HOST': 'localhost',
@@ -167,4 +168,5 @@ EMAIL_USE_TLS = True
 
 # Third party required setup
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-ACCOUNT_ACTIVATION_DAYS = 7
+
+

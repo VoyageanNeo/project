@@ -1,7 +1,22 @@
 from django import forms
 from django.utils import timezone
 from pagedown.widgets import PagedownWidget
-from .models import mileStone, mileStory
+from .models import mileStone, mileStory, UserProfile
+from django.contrib.auth.models import User
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["username", "email"]
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = [
+            "birth_date",
+            "gender",
+            "self_introduction",
+            "image",
+        ]
 
 class mileStoryForm(forms.ModelForm):
     class Meta:
@@ -20,7 +35,6 @@ class mileStoneForm(forms.ModelForm):
     parentStory = forms.ModelChoiceField(
         queryset=mileStory.objects.all(),
         widget=forms.RadioSelect,
-        empty_label='None'
     )
     class Meta:
         model = mileStone

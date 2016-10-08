@@ -6,14 +6,9 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
 from datetime import datetime
-from django.utils.text import slugify
-# Create your models here.
-# MVC MODEL VIEW CONTROLLER
-
-
-#Post.objects.all()
-#Post.objects.create(user=user, title="Some time")
-
+from django.db import models
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 
 def upload_location(instance, filename):
     #filebase, extension = filename.split(".")
@@ -29,13 +24,55 @@ def upload_location(instance, filename):
     """
     # return "%s/%s" %(new_id, filename)
     return "%s/%s" % (instance.id, filename)
+class UserProfile(models.Model):
+    GENRE_CHOICES = (
+        ('m', 'Male'),
+        ('f', 'Female'),
+        ('a', 'Agender'),
+        ('b', 'Bigender'),
+        ('f', 'Gender-fluid')
+    )
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    birth_date = models.DateField(default=datetime.now)
+    gender = models.CharField(max_length=1, choices=GENRE_CHOICES)
+    # address = models.CharField(max_length=150)
+    # postal_code_4 = models.PositiveIntegerField()
+    # postal_code_3 = models.PositiveIntegerField()
+    # locatity = models.CharField(max_length=30)
+    # marital_status = models.CharField(max_length=1, choices=MARITAL_STATUS_CHOICES)
+    # child_amount = models.PositiveSmallIntegerField()
+    self_introduction = models.TextField(max_length=300, blank=True, null=True)
+    image = models.ImageField(upload_to=upload_location,
+                              null=True,
+                              blank=True,
+                              width_field="width_field",
+                              height_field="height_field")
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
+    def __unicode__(self):
+        return self.user.username
+
+    def __str__(self):
+        return self.user.username
+
+    def get_absolute_url(self):
+        return reverse("mileStory:storylist")
+
 class mileStory(models.Model):
-    user=models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     storyTitle=models.CharField(max_length=20)
     content=models.TextField(max_length=150)
     startDate = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now, blank=True)
     targetDate = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now, blank=True)
+    image = models.ImageField(upload_to=upload_location,
+                              null=True,
+                              blank=True,
+                              width_field="width_field",
+                              height_field="height_field")
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
     # mileStones = models.ForeignKey(mileStone, null=True)
+
 
     def __unicode__(self):
         return self.storyTitle
@@ -49,7 +86,7 @@ class mileStory(models.Model):
     class Meta:
         ordering = ["-startDate"]
 class mileStone(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=120)
     # slug = models.SlugField(unique=True)
     content = models.TextField()
@@ -112,4 +149,3 @@ class mileStone(models.Model):
 #
 #
 # pre_save.connect(pre_save_mileStone_receiver, sender=mileStone)
-
