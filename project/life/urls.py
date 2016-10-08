@@ -4,12 +4,18 @@ from .views import (
     mileStone_create,
     mileStone_detail,
     mileStone_list,
-    mileStone_delete
+    mileStone_delete,
+    mileStory_create,
+    mileStory_delete,
+    mileStory_detail,
+    mileStory_list,
 	)
+
 urlpatterns = [
-	url(r'^$', mileStone_list, name='list'),
-    url(r'^create/$', mileStone_create, name='create'),
-    url(r'^(?P<slug>[\w-]+)/$', mileStone_detail, name='detail'),
+	url(r'^$', mileStory_list, name='storylist'),
+    url(r'^create/$', mileStory_create, name='storycreate'),
+    url(r'^(?P<story_id>[0-9]+)/$', mileStory_detail, name='storydetail'),
     #TODO make view to edit milestoen
-    url(r'^(?P<slug>[\w-]+)/delete/$', mileStone_delete, name='delete'),
+    url(r'^(?P<story_id>[0-9]+)/delete/', mileStory_delete, name='storydelete'),
+    url(r'^(?P<story_id>[0-9]+)/createstone/', mileStone_create, name='stonecreate'),
 ]

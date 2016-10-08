@@ -29,11 +29,29 @@ def upload_location(instance, filename):
     """
     # return "%s/%s" %(new_id, filename)
     return "%s/%s" % (instance.id, filename)
+class mileStory(models.Model):
+    user=models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    storyTitle=models.CharField(max_length=20)
+    content=models.TextField(max_length=150)
+    startDate = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now, blank=True)
+    targetDate = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now, blank=True)
+    # mileStones = models.ForeignKey(mileStone, null=True)
 
+    def __unicode__(self):
+        return self.storyTitle
+
+    def __str__(self):
+        return self.storyTitle
+
+    def get_absolute_url(self):
+        return reverse("mileStory:storydetail", kwargs={"story_id": self.id})
+
+    class Meta:
+        ordering = ["-startDate"]
 class mileStone(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=120)
-    slug = models.SlugField(unique=True)
+    # slug = models.SlugField(unique=True)
     content = models.TextField()
     image = models.ImageField(upload_to=upload_location,
             null=True,
@@ -46,13 +64,19 @@ class mileStone(models.Model):
     IncidentEndDate = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now, blank=True)
 
     EMOTION_CHOICES = (
-        ('h', 'HAPPY'),
+        ('H', 'HAPPY'),
         ('S', 'SAD'),
         ('A','ANGRY'),
         ('J','JOY'),
+        ('E', 'EXCITED'),
+        ('X', 'ANXIETY'),
+        ('B', 'BLUE'),
+        ('P', 'PANIC'),
+        ('C', 'CHILLING'),
+        ('R', 'RELAX'),
     )
     Emotion = models.CharField(max_length=1, choices=EMOTION_CHOICES)
-
+    parentStory = models.ForeignKey(mileStory, on_delete=models.CASCADE)
     # objects = PostManager()
 
     def __unicode__(self):
@@ -62,30 +86,30 @@ class mileStone(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("life:detail", kwargs={"slug": self.slug})
+        return reverse("mileStory:storydetail", kwargs={"story_id": self.parentStory.id})
 
     class Meta:
         ordering = ["-IncidentStartDate"]
 
 
 
-def create_slug(instance, new_slug=None):
-    slug = slugify(instance.title)
-    if new_slug is not None:
-        slug = new_slug
-    qs = mileStone.objects.filter(slug=slug).order_by("-id")
-    exists = qs.exists()
-    if exists:
-        new_slug = "%s-%s" %(slug, qs.first().id)
-        return create_slug(instance, new_slug=new_slug)
-    return slug
-
+# def create_slug(instance, new_slug=None):
+#     slug = slugify(instance.title)
+#     if new_slug is not None:
+#         slug = new_slug
+#     qs = mileStone.objects.filter(slug=slug).order_by("-id")
+#     exists = qs.exists()
+#     if exists:
+#         new_slug = "%s-%s" %(slug, qs.first().id)
+#         return create_slug(instance, new_slug=new_slug)
+#     return slug
 #
-# def pre_save_post_receiver(sender, instance, *args, **kwargs):
+#
+# def pre_save_mileStone_receiver(sender, instance, *args, **kwargs):
 #     if not instance.slug:
 #         instance.slug = create_slug(instance)
 #
 #
 #
-# pre_save.connect(pre_save_post_receiver, sender=Post)
+# pre_save.connect(pre_save_mileStone_receiver, sender=mileStone)
 
