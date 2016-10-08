@@ -95,11 +95,13 @@ def mileStory_detail(request, story_id):
     # if instance.publish > timezone.now().date() or instance.draft:
     #     if not request.user.is_staff or not request.user.is_superuser:
     #         raise Http404
+    mileStone_query = mileStone.parentStory.filter(id=story_id)
     share_string = quote_plus(instance.content)
     context = {
         "title": instance.storyTitle,
         "instance": instance,
         "share_string": share_string,
+        "milestone": mileStone_query,
     }
     return render(request, "mileStory_detail.html", context)
 

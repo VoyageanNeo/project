@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c47c997-f4ec-4a0e-bced-4a2462e76fa3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/templates/life/post_list.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/life/admin.py" afterPath="$PROJECT_DIR$/project/life/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/life/forms.py" afterPath="$PROJECT_DIR$/project/life/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/life/models.py" afterPath="$PROJECT_DIR$/project/life/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/life/urls.py" afterPath="$PROJECT_DIR$/project/life/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/life/views.py" afterPath="$PROJECT_DIR$/project/life/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/project/settings.py" afterPath="$PROJECT_DIR$/project/project/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/project/urls.py" afterPath="$PROJECT_DIR$/project/project/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/templates/life/base.html" afterPath="$PROJECT_DIR$/project/templates/life/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/templates/life/mileStone_form.html" afterPath="$PROJECT_DIR$/project/templates/life/mileStone_form.html" />
     </list>
     <ignored path="500hackathon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/life/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -59,7 +49,7 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/life/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="249">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -68,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/life/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="103" column="44" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="44" />
+            <state relative-caret-position="90">
+              <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
               <folding>
                 <element signature="e#143#178#0" expanded="true" />
               </folding>
@@ -153,11 +143,11 @@
         <option value="$PROJECT_DIR$/project/templates/newsletter/newletterbase.html" />
         <option value="$PROJECT_DIR$/project/life/admin.py" />
         <option value="$PROJECT_DIR$/project/project/urls.py" />
-        <option value="$PROJECT_DIR$/project/life/views.py" />
         <option value="$PROJECT_DIR$/project/life/forms.py" />
         <option value="$PROJECT_DIR$/project/project/settings.py" />
         <option value="$PROJECT_DIR$/project/life/urls.py" />
         <option value="$PROJECT_DIR$/project/life/models.py" />
+        <option value="$PROJECT_DIR$/project/life/views.py" />
       </list>
     </option>
   </component>
@@ -208,6 +198,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="500hackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="500hackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="500hackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static_cdn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -320,6 +324,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="500hackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="500hackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media_cdn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="None" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -836,16 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/life/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="44" />
-          <folding>
-            <element signature="e#143#178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -864,9 +876,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/life/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/life/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="249">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -874,12 +896,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/life/urls.py">
+    <entry file="file://$PROJECT_DIR$/project/life/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="90">
+          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#143#178#0" expanded="true" />
           </folding>
         </state>
       </provider>
