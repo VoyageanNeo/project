@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'welcomehome',
     'posts',
     'pagedown',
-    'newsletter'
+    'newsletter',
+    'crispy_forms',
+    'registration',
 
 ]
 # orgder is important don't touch it just leave is as it was
@@ -159,3 +161,8 @@ EMAIL_HOST_USER = 'nwcntyrcrm@gmail.com'
 EMAIL_HOST_PASSWORD = 'orehatennsai'
 EMAIL_PORT=587
 EMAIL_USE_TLS = True
+
+
+# Third party required setup
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+ACCOUNT_ACTIVATION_DAYS = 7
