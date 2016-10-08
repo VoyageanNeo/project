@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Google map API
 GEOPOSITION_GOOGLE_MAPS_API_KEY = "AIzaSyCrvpKrB73r_KNB0dQ-R9eR6cMSaJvZpkU"
@@ -42,9 +42,6 @@ INSTALLED_APPS = [
     'pagedown',
     'crispy_forms',
     'life',
-    'newsletter',
-    'posts',
-    'welcomehome',
     # registration
 
 
@@ -68,9 +65,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates/life'),
-            os.path.join(BASE_DIR, 'templates/registration'),
-            os.path.join(BASE_DIR, 'templates/newsletter'),
-            os.path.join(BASE_DIR, 'templates/posts'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -100,7 +94,7 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cdb',
+        'NAME': 'ddb',
         'USER': 'myprojectuser',
         'PASSWORD': 'five',
         'HOST': 'localhost',
@@ -156,14 +150,6 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
 
-# Host for sending e-mail.
-EMAIL_HOST = 'smtp.gmail.com'
-
-# Optional SMTP authentication information for EMAIL_HOST.
-EMAIL_HOST_USER = 'nwcntyrcrm@gmail.com'
-EMAIL_HOST_PASSWORD = 'orehatennsai'
-EMAIL_PORT=587
-EMAIL_USE_TLS = True
 
 
 # Third party required setup

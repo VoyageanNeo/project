@@ -21,9 +21,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^lifeStory/', include('life.urls', namespace='mileStory')),
-    url(r'^welcomehome/', include('welcomehome.urls')),
-    url(r'^posts/', include('posts.urls', namespace='posts')),
-    url(r'^newsletter/', include('newsletter.urls', namespace='newsletter')),
 ]
 
 if settings.DEBUG:

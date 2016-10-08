@@ -42,9 +42,6 @@ INSTALLED_APPS = [
     'pagedown',
     'crispy_forms',
     'life',
-    'newsletter',
-    'posts',
-    'welcomehome',
     # registration
 
 
@@ -68,9 +65,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates/life'),
-            os.path.join(BASE_DIR, 'templates/registration'),
-            os.path.join(BASE_DIR, 'templates/newsletter'),
-            os.path.join(BASE_DIR, 'templates/posts'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
