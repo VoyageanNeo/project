@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'newsletter',
     'crispy_forms',
     'registration',
+    'life',
 
 ]
 # orgder is important don't touch it just leave is as it was
@@ -66,6 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'templates/life'),
             os.path.join(BASE_DIR, 'templates/newsletter'),
             os.path.join(BASE_DIR, 'templates/posts'),
         ],
