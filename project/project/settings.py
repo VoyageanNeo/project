@@ -41,34 +41,39 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     "geoposition",
     'welcomehome',
-    'account',
+    'posts',
+    'pagedown',
+    'newsletter',
+    'crispy_forms',
+    'registration',
+    'life',
 
 ]
+# orgder is important don't touch it just leave is as it was
 
-MIDDLEWARE = [
-    "account.middleware.LocaleMiddleware",
-    "account.middleware.TimezoneMiddleware",
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-]
-MIDDLEWARE_CLASSES = [
-    "account.middleware.ExpiredPasswordMiddleware",
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/welcomehome')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates/life'),
+            os.path.join(BASE_DIR, 'templates/newsletter'),
+            os.path.join(BASE_DIR, 'templates/posts'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -76,9 +81,7 @@ TEMPLATES = [
         },
     },
 ]
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "account.context_processors.account",
-]
+
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
@@ -86,7 +89,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'authdefault': {
         'ENGINE' : 'django.contrib.gis.db.backends.postgis',
         'NAME': 'accounttestdb',
         'USER': 'accountuser',
@@ -94,9 +97,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     },
-    'geodefault': {
-        'ENGINE' : 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'myprojectdb',
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'bdb',
         'USER': 'myprojectuser',
         'PASSWORD': 'five',
         'HOST': 'localhost',
@@ -107,7 +110,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
-AUTH_USER_MODEL = "account.User"
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -150,3 +153,18 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+
+
+# Host for sending e-mail.
+EMAIL_HOST = 'smtp.gmail.com'
+
+# Optional SMTP authentication information for EMAIL_HOST.
+EMAIL_HOST_USER = 'nwcntyrcrm@gmail.com'
+EMAIL_HOST_PASSWORD = 'orehatennsai'
+EMAIL_PORT=587
+EMAIL_USE_TLS = True
+
+
+# Third party required setup
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+ACCOUNT_ACTIVATION_DAYS = 7

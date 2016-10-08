@@ -5,6 +5,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from .models import Person
 from .form import PersonForm
+from . import form
+
 
 def forceenroll(request):
     if not request.user.is_authenticated():
