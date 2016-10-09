@@ -4,6 +4,16 @@
 {% endblock head_extra %}
 
 {% block content %}
+
+<form method="post" action="#" id="message_form">
+	<label for="picture" id="picture_label">
+	    <input type="file" id="picture" style="display:none;">
+	</label>
+	<input type="text" name="text" id="text">
+	<input type="submit" id="submit" value="Go!">
+</form>
+<!-button直下に上のフォームを配置--!>
+
 <div class='col-sm-6 col-sm-offset-3'>
 <h1>{{title}}</h1>
 

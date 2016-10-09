@@ -35,7 +35,7 @@ header{
   z-index: 2;
   box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.3);
 }
-button#crate_button{
+button{
   position: absolute;
   top: 16px;
   right: 8%;
@@ -203,3 +203,55 @@ span{
   height: 35px;
   box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
 }
+
+/*timeline_create.html*/
+#message_form{
+  padding: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  margin: auto;
+  z-index: 2;
+  background-color: white;
+  height: 43px;
+  border-top: solid 2px #fab117;
+  border-radius: 9px;
+}
+#message_form input{
+  background-image: none;
+}
+#picture_label{
+ background-image: url(../img/camera.png);
+  -webkit-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+#text{
+  border: 0;
+  padding: 0;
+  height: 25px;
+  width: 70%;
+  border: 1px solid #fafafa;
+}
+#submit{
+  background-color: #fab117;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+}
+
+
+
+
+
+
+
