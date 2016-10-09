@@ -84,14 +84,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'authdefault': {
-        'ENGINE' : 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'accounttestdb',
-        'USER': 'accountuser',
-        'PASSWORD': 'five',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cdb',
