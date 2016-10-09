@@ -35,9 +35,27 @@ header{
   z-index: 2;
   box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.3);
 }
+button{
+  position: absolute;
+  top: 16px;
+  right: 8%;
+  border-radius: 47px;
+  background-color: #FFB736;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+  background-image: url(../img/button.png);
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+}
 form{
   text-align: center;
   padding: 20px 0px;
+  padding-right: 9%;
 }
 input{
   background-image: url("../img/loupe.png");
