@@ -5,10 +5,11 @@
 {% block body_id %}<body id="thumnails">{% endblock body_id %}
 {% block content %}
 {% for obj in object_list %}
-{% if not obj.image %}
-    <li style="background-image: url('img/pumpkin-02.png');">
-{% else obj.image %}
+{% if obj.image %}
     <li style="background-image: url('{{ obj.image.url }}');">
+{% else %}
+    <li style="background-image: url('img/pumpkin-02.png');">
+    
     {% endif %}
         <div class="title">
             {{ obj.storyTitle}}

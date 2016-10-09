@@ -27,9 +27,11 @@
 		</script> -->
 		<header>
 		<form method='GET' action=''>
-			<input type='text' name='q' placeholder=placeholder="&nbsp; &nbsp; &nbsp; Search" value='{{ request.GET.q }}' class="search_box"/>
-		</form>
+			<input type='text' name='q' placeholder="&nbsp; &nbsp; &nbsp; Search" value='{{ request.GET.q }}' class="search_box"/>
+				
 			<button></button>
+		</form>
+
 		</header>
 		{% block add_header %}{% endblock add_header %}
 		<ul id="main_contents">
