@@ -15,7 +15,7 @@
 	{% block body_id %}
 	<body>
 	{% endblock body_id %}
-<!-- 		<div id="fb-root"></div>
+		<!-- <div id="fb-root"></div>
 		<script>
 			(function(d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0];
@@ -26,10 +26,10 @@
 			}(document, 'script', 'facebook-jssdk'));
 		</script> -->
 		<header>
-			<form method="get" action="#">
+			<form method="post" action="#">
 				<input type="text" name="example" placeholder="&nbsp; &nbsp; &nbsp; Search" class="search_box">
 			</form>
-			<button></button>
+			<button id="crate_button"></button>
 		</header>
 		{% block add_header %}{% endblock add_header %}
 		<ul id="main_contents">
