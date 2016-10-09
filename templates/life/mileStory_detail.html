@@ -1,0 +1,32 @@
+{{% extends "base.html" %}
+{% block body_id %}<body id="timeline">{% endblock body_id %}
+{% block add_header %}
+    <div id="subtitle">
+        {{title}}
+
+        <img src="img/face-01.png" alt="" class="profile">
+    </div>
+{% endblock add_header %}
+{% block content %}
+    {% for object in milestone%}
+    <div> {{object.title}}</div><br/>
+    <div> {{object.content}}</div><br/>
+    {% if object.image %}
+    <img src='{{ object.image.url }}' class='img-responsive' />
+    {% endif %}
+    <div> {{object.IncidentStartDate}} - </div>
+    <div> {{object.IncidentEndDate}}</div>
+    <div> {{object.Emotion}}</div>
+
+    <li>
+        <div class="txt">{{object.title}}<span>{{object.IncidentStartDate}}-{{object.IncidentStartDate}}</span></div>
+        <div class="picture">
+            {% if object.image %}
+            <img src='{{ object.image.url }}' alt=""/>
+            {% else %}
+            <img src="img/pumpkin-02.png" alt="">
+            {% endif %}
+            </div>
+    </li>
+    {% endfor %}
+{% endblock content %}

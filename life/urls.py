@@ -17,7 +17,7 @@ from .views import (
 	)
 
 urlpatterns = [
-    url(r'^register', add_user, name='register'),
+    url(r'^register/', add_user, name='register'),
 	url(r'^$', mileStory_list, name='storylist'),
     url(r'^my/', my_mileStory_list, name='mystorylist'),
     url(r'^create/$', mileStory_create, name='storycreate'),

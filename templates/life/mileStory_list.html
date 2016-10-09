@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<!-- {% block head_extra %}
+    {{form.media}}
+{% endblock head_extra %} -->
+{% block body_id %}<body id="thumnails">{% endblock body_id %}
+{% block content %}
+{% for obj in object_list %}
+{% if not obj.image %}
+    <li style="background-image: url('img/pumpkin-02.png');">
+{% else obj.image %}
+    <li style="background-image: url('{{ obj.image.url }}');">
+    {% endif %}
+        <div class="title">
+            {{ obj.storyTitle}}
+            <img src={{obj.get__user_thumb}} alt="" class="profile">
+<!--             <img src="img/face-01.png" alt="" class="profile"> -->
+        </div>
+    </li>
+    <!-- <li id="create_button">＋</li> -->
+{% endfor %}
+{% endblock content %}
+
