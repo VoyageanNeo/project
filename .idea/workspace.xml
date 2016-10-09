@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c47c997-f4ec-4a0e-bced-4a2462e76fa3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/life/beore/mileStory_detail.html" afterPath="$PROJECT_DIR$/templates/life/mileStory_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/life/admin.py" afterPath="$PROJECT_DIR$/life/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/life/urls.py" afterPath="$PROJECT_DIR$/life/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/settings/base.py" afterPath="$PROJECT_DIR$/project/settings/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/settings/local.py" afterPath="$PROJECT_DIR$/project/settings/local.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/life/base.html" afterPath="$PROJECT_DIR$/templates/life/base.html" />
     </list>
     <ignored path="500hackathon.iws" />
     <ignored path=".idea/workspace.xml" />
