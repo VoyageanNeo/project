@@ -1,0 +1,187 @@
+/*--body--*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    src: url('fonts/fontawesome-webfont.eot');
+    src: url('ffonts/fontawesome-webfont.eot?iefix') format('eot'),
+         url('fonts/fontawesome-webfont.woff') format('woff'),
+         url('fonts/fontawesome-webfont.ttf') format('truetype'),
+         url('fonts/fontawesome-webfont.svg#webfontjSpbZQRv') format('svg');
+}
+body{
+    font-size: 62.5%;
+    line-height: 28px;
+    letter-spacing: 0px;
+    font-family: "YuGothic","游ゴシック","Noto Sans Japanese","MS Pゴシック";
+    font-weight: 100;
+    color: #535353;
+    // min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    // min-width: 1200px;
+}
+body a{
+  text-decoration:none;
+  color: #535353;
+}
+body li{
+  list-style-type: none;
+}
+header{
+  width: 100%;
+  background-color: #FAB117;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.3);
+}
+form{
+  text-align: center;
+  padding: 20px 0px;
+}
+input{
+  background-image: url("../img/loupe.png");
+  -webkit-background-size: 12px;
+       -o-background-size: 12px;
+          background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 3% center;
+}
+.search_box{
+  width: 60%;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
+  display: inline;
+}
+li{
+  height: 46vh;
+  margin: 15px;
+  border-radius: 25px;
+  background-color: #FDFDFD;
+  border: 1px solid #FAFAFA;
+  box-shadow: 0px 4px 20px -9px rgba(0,0,0,1);
+  position: relative;
+  overflow: hidden;
+}
+
+/*-index-*/
+#main_contents{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body#thumnails li{
+  -webkit-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div.title{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  padding-left: 10%;
+}
+.profile{
+  position: absolute;
+  top: -44px;
+  right: 16%;
+  border-radius: 34px;
+  width: 63px;
+  height: 63px;
+  box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
+}
+#create_button{
+  height: 80px;
+  width: 80px;
+  border-radius: 60px;
+  background-image: none;
+  position: fixed;
+  bottom: -8px;
+  right: -3px;
+}
+
+
+/*timeline*/
+body#timeline ul#main_contents{
+  width: 90%;
+  padding: 0;
+  margin: auto;
+  border-left: 1px solid #DDDDDD;
+  height: 100%;
+}
+body#timeline li:before{
+  content: '';
+  background-color: #FAB117;
+  border-radius: 34px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -9px;
+  margin: auto;
+}
+body#timeline li{
+  height: 8vh;
+  margin: 44px 40px 44px 0px;
+  border-radius: 15px;
+  box-shadow: none;
+  overflow: visible !important;
+}
+body#timeline li div.picture{
+  box-shadow: 0px 4px 20px -9px rgba(0,0,0,1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 25px;
+  margin-left: 18px;
+  overflow: hidden;
+}
+body#timeline li div img{
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+body#timeline li div.txt{
+  position: absolute;
+  top: -26px;
+  left: 10%;
+  width: 100%;
+}
+span{
+  position: absolute;
+  right: 8%;
+}
+#subtitle{
+  width: 100%;
+  position: static;
+  top: 0;
+  background-color: #E7A72A;
+  padding-top: 80px;
+  z-index: 1;
+  box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.3);
+  color: white;
+  font-size: 15px;
+  padding-left: 5%;
+  padding-bottom: 2%;
+}
+#subtitle img.profile{
+  position: absolute;
+  top: 75px;
+  right: 16%;
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.3);
+}

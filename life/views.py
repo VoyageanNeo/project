@@ -15,7 +15,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.urls import reverse
 from .forms import mileStoneForm, mileStoryForm, UserForm, UserProfileForm
-from .models import mileStone, mileStory
+from .models import mileStone, mileStory, UserProfile
 #in views.py
 def add_user(request):
     uform = UserForm(request.POST or None)
@@ -141,20 +141,38 @@ def mileStory_detail(request, story_id):
     }
     return render(request, "mileStordy_detail.html", context)
 
+
+
+
 def my_mileStory_list(request):
     if request.user.is_anonymous():
         return HttpResponseRedirect(reverse('mileStory:register'))
     queryset_list = mileStory.objects.filter(user=request.user)  # .order_by("-timestamp")
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query)
+        ).distinct()
+
     # input type = 'text'name = 'q'placeholder = 'Search posts'value = '{{ request.GET.q }}'
     context = {
         "object_list": queryset_list,
         "title": "mileStory",
     }
     return render(request, "mileStory_list.html", context)
+
 def mileStory_list(request):
     today = timezone.now().date()
+
     queryset_list = mileStory.objects.all()  # .order_by("-timestamp")
     # input type = 'text'name = 'q'placeholder = 'Search posts'value = '{{ request.GET.q }}'
+    query = request.GET.get("q")
+    if query:
+        queryset_list = queryset_list.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query)
+        ).distinct()
     context = {
         "object_list": queryset_list,
         "title": "mileStory",

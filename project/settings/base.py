@@ -148,4 +148,4 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 # Third party required setup
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-
+THUMB_SIZE = 760

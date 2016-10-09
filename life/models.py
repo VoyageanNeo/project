@@ -49,6 +49,7 @@ class UserProfile(models.Model):
                               height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
+    thumbnail = models.ImageField(upload_to='thumbs', editable=False)
     def __unicode__(self):
         return self.user.username
 
@@ -82,7 +83,8 @@ class mileStory(models.Model):
 
     def get_absolute_url(self):
         return reverse("mileStory:storydetail", kwargs={"story_id": self.id})
-
+    def get_user_thumb(self):
+        return UserProfile.thumbnail.filter(user=self.user)
     class Meta:
         ordering = ["-startDate"]
 class mileStone(models.Model):
